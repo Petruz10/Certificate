@@ -6,6 +6,8 @@
 		<link href="style/bootstrap.min.css" rel="stylesheet" media="screen">	
 		<link href="style/style.css" rel="stylesheet" media="screen">
 <script>
+	
+//check if the form got everything needed and that the user have not used any invalid Characters
 function validateForm()
 {
 var check1=document.forms["new"]["fname"].value;
