@@ -1,6 +1,11 @@
 <?php
-session_start();
-require_once('../library/odf.php');
+//if the session is not set then starting a new session
+if (session_status === PHP_SESSION_NONE)
+{
+	session_start();
+}
+
+require_once('../library/odf.php');			//getting information from tje odf.php-file
 $base = $_SESSION["base"]; 				//Getting file name with filled Institute Details
 $odf = new odf("odt/base/$base.odt");   		//Initializing the object with above file name
 $id = uniqid();
