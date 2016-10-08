@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php if(session_status() === PHP_SESSION_NONE) session_start(); //If session is not set then it will start a new session  ?>
 <?php
 
 require_once('../library/odf.php');
@@ -76,6 +76,9 @@ echo '
 		<link href="style/style.css" rel="stylesheet" media="screen">
 
 <script>
+	
+//function to check if the user have written everything needed in the form
+//The function does also chech if the user has used any invalid Characters
 function validateForm()
 {
 var check1=document.forms["new"]["in"].value;
